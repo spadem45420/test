@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="BIG5">
+<title>jQuery</title>
+</head>
+<body>
+<a href="test.html">Test</a>|
+<a href="jQuerySelectors.html">jQuerySelectors</a>|
+<a href="http://www.google.com.tw">Google</a>|
+<a href="http://www.facebook.com">FB</a>
+<hr>
+
+<input type="text" id="username"><input type="button" id="buttonClick" value="Click"><span id=span01></span>
+<hr>
+<select id=item>
+	<option value="a">item1</option>
+	<option value="b">item2</option>
+	<option value="c">item3</option>
+	<option value="d">item4</option>
+	<option value="e">item5</option>
+</select>
+<span id=span02></span>
+
+<hr>
+<h1 id=text2>Hello !!!</h1>
+
+<script src="Script/jquery-1.11.1.min.js"></script>
+<script>
+	$(function(){//可省略
+		$('#username').val("guest");//val("有值") 表示寫入
+		$('#buttonClick').click(function(){
+			console.log($('#username').val());
+			var name = $('#username').val();
+			
+// 			$('#span01').text("<h2>Hello "+name+"<h2>");
+			$('#span01').html("<h2>Hello "+name+"<h2>");
+			
+
+// 			console.log($('#span01').text());
+// 			console.log($('#span01').html());
+		})
+		
+		//selector
+		$('#item').change(function(){//change為改變時
+// 			alert($(this).val());
+// 			console.log($('#item>:selected').val())
+// 			console.log($('#item>:selected').text())
+// 			console.log($('#item>:selected').index())
+			var v = $('#item>:selected').val();//val()讀屬性值
+			var t = $('#item>:selected').text();//text()讀文字
+			var i = $('#item>:selected').index();//index
+			
+			$('#span02').html(v + ","+ t + "," + i);
+		})
+		
+		
+		//屬性頁籤 p.20
+// 		$('a').attr('target','_blank');
+		$('a[href^="http"]').attr('target','_blank');
+		
+		
+		//節點處理 p.21
+// 		$('#text2').append("AAA").prepend("BBB");
+// 		$("<u>CCC</u>").appendTo('#text2');
+// 		$("<u>DDD</u>").prependTo('#text2');
+// 		$('#text2').empty();
+		$('#text2').remove();
+	})
+</script>
+</body>
+</html>

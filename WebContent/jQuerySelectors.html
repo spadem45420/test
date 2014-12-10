@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="BIG5">
+<title>jQuery</title>
+<style>
+#table01 {border:1px green solid;
+		  width:300px;
+		  border-collapse:collapse;
+		  padding:5px}
+#table01 td {border:1px green solid}		  
+</style>
+</head>
+<body>
+<h1>Attribute</h1>
+<h2>h2</h2>
+<h2>h3</h2>
+<h2>h4</h2>
+<input type="text" value="請輸入"><br>
+<input type="text" value="請輸入"><br>
+<input type="text" value="請輸入"><br>
+<input type="button" value="送出"><br>
+<hr>
+<table id=table01>
+	<tr>
+		<td>A</td>
+		<td>B</td>
+		<td>C</td>
+	</tr>
+	<tr>
+		<td>D</td>
+		<td>E</td>
+		<td>F</td>
+	</tr>
+	<tr>
+		<td>G</td>
+		<td>H</td>
+		<td>I</td>
+	</tr>
+</table>
+<hr>
+<table id=table02>
+	<tr>
+		<td>A</td>
+		<td>B</td>
+		<td>C</td>
+	</tr>
+	<tr>
+		<td>D</td>
+		<td>E</td>
+		<td>F</td>
+	</tr>
+	<tr>
+		<td>G</td>
+		<td>H</td>
+		<td>I</td>
+	</tr>
+</table>
+
+
+<script src="Script/jquery-1.11.1.min.js"></script>
+<script>
+	$(function(){
+// 		$('input[type="text"]').css('color','silver');
+		$('input[type!="button"]').css('color','silver');
+		
+		//Basic Filter
+// 		$('#table01 td:eq(2)').css('background-color','orange');//選取第三個(0,1,2...)
+// 		$('#table01 td:lt(3)').css('background-color','orange');
+// 		$('#table01 td:gt(5)').css('background-color','orange');
+// 		$('#table01 td:even').css('background-color','orange');
+// 		$('#table01 td:odd').css('background-color','yellow');
+// 		$(':header').css('text-decoration','underline');//h1~h6有效
+		
+		
+		//Child Filter
+// 		$('#table01 td:nth-child(2)').css('background-color','orange')//所有td元素下的第'2'個
+		$('#table01 td:first-child').css('background-color','orange')//所有td元素下的第一個
+// 		$('#table01 td:last-child').css('background-color','orange')//所有td元素下的最後一個
+		
+		
+	})
+</script>
+</body>
+</html>

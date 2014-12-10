@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="BIG5">
+<title>jQuery</title>
+</head>
+<body>
+<h1>jQuery Test!!</h1>
+<h1>jQuery Test!!</h1>
+<h1>jQuery Test!!</h1>
+<h1>jQuery Test!!</h1>
+<h1>jQuery Test!!</h1>
+
+
+
+<script src="Script/jquery-1.11.1.min.js"></script>
+<script>
+	$(function(){
+		//javascript寫法
+// 		$('h1').css('color','green');
+// 		$('h1').mouseover(function(){
+// 			$(this).css('color','red')
+// 		});
+// 		$('h1').mouseout(function(){
+// 			$(this).css('color','green')
+// 		});
+
+		//javascript寫法2
+// 		$('h1').css('color','green');
+// 		$('h1').mouseover(over);
+// 		$('h1').mouseout(out);
+
+// 		function over(){
+// 			$(this).css('color','red');
+// 		}
+		
+// 		function out(){
+// 			$(this).css('color','green');
+// 		}
+		
+		//jQuery慣用寫法，找到一次h1後直接觸發所有方法，節省效能
+// 		$('h1').css('color','green').mouseover(over).mouseout(out);
+		
+// 		function over(){
+// 			$(this).css('color','red');
+// 		}
+		
+// 		function out(){
+// 			$(this).css('color','green');
+// 		}
+
+
+
+		//也可以用JASON的寫法帶入
+		var s1 = {'color':'green',
+				  'background-color':'yellow',
+				  'width':'350px',
+				  'text-align':'center',
+				  'border':'1px solid red'}
+		
+		var s2 = {'color':'green',
+				  'background-color':'orange',
+				  'width':'350px',
+				  'text-align':'center',
+				  'border':'2px solid red'}
+		
+		$('h1').css(s1).mouseover(over).mouseout(out);
+		
+		function over(){
+			$(this).css(s2);
+		}
+		
+		function out(){
+			$(this).css(s1);
+		}
+		
+	})
+</script>
+</body>
+</html>
